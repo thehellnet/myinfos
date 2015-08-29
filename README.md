@@ -1,2 +1,2 @@
 # myinfos
-Display your informations about IMEI, ICCID, phone name, and others
+Display your informations about IMEI, ICCID, phone name, and others...
