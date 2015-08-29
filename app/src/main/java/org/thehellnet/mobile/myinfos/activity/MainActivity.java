@@ -1,9 +1,11 @@
-package org.thehellnet.mobile.myinfos;
+package org.thehellnet.mobile.myinfos.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import org.thehellnet.mobile.myinfos.R;
 
 public class MainActivity extends AppCompatActivity {
 
