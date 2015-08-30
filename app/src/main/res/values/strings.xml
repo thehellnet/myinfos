@@ -1,6 +1,16 @@
 <resources>
-    <string name="app_name">My Infos</string>
+    <string name="app_name" translatable="false">My Infos</string>
 
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="menu_version">menu_version</string>
+
+    <string name="ui_title_phone">ui_title_phone</string>
+    <string name="ui_label_imei">ui_label_imei</string>
+
+    <string name="ui_title_sim">ui_title_sim</string>
+    <string name="ui_label_iccid">ui_label_iccid</string>
+    <string name="ui_label_number">ui_label_number</string>
+    <string name="ui_label_operator">ui_label_operator</string>
+    <string name="ui_label_subscriber">ui_label_subscriber</string>
+
+    <string name="ui_value_notdefined">ui_value_notdefined</string>
 </resources>

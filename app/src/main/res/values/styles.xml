@@ -5,4 +5,30 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="ui_version_value">
+        <item name="android:textColor">@color/app_version_value</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="ui_infos_title">
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="ui_infos_label">
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="ui_infos_value">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:inputType">none</item>
+        <item name="android:editable">false</item>
+        <item name="android:textIsSelectable">true</item>
+    </style>
 </resources>

@@ -1,11 +1,111 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+    tools:context=".MainActivity">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <ScrollView
+        android:id="@+id/infos_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/version_container"
+        android:layout_alignParentTop="true">
 
+        <LinearLayout
+            android:id="@+id/infos_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/phone_title"
+                style="@style/ui_infos_title"
+                android:text="@string/ui_title_phone" />
+
+            <LinearLayout
+                android:id="@+id/infos_phone_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/imei_label"
+                    style="@style/ui_infos_label"
+                    android:text="@string/ui_label_imei" />
+
+                <EditText
+                    android:id="@+id/imei_value"
+                    style="@style/ui_infos_value" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/sim_title"
+                style="@style/ui_infos_title"
+                android:text="@string/ui_title_sim" />
+
+            <LinearLayout
+                android:id="@+id/infos_sim_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/iccid_label"
+                    style="@style/ui_infos_label"
+                    android:text="@string/ui_label_iccid" />
+
+                <EditText
+                    android:id="@+id/iccid_value"
+                    style="@style/ui_infos_value" />
+
+                <TextView
+                    android:id="@+id/number_label"
+                    style="@style/ui_infos_label"
+                    android:text="@string/ui_label_number" />
+
+                <EditText
+                    android:id="@+id/number_value"
+                    style="@style/ui_infos_value" />
+
+                <TextView
+                    android:id="@+id/operator_label"
+                    style="@style/ui_infos_label"
+                    android:text="@string/ui_label_operator" />
+
+                <EditText
+                    android:id="@+id/operator_value"
+                    style="@style/ui_infos_value" />
+
+                <TextView
+                    android:id="@+id/subscriber_label"
+                    style="@style/ui_infos_label"
+                    android:text="@string/ui_label_subscriber" />
+
+                <EditText
+                    android:id="@+id/subscriber_value"
+                    style="@style/ui_infos_value" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/version_container"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/version_value"
+            style="@style/ui_version_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
 </RelativeLayout>

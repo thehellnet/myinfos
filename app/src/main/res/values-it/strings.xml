@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My Infos</string>
+    <string name="menu_version">Versione</string>
+    <string name="ui_label_iccid">ICCID (Seriale SIM)</string>
+    <string name="ui_label_imei">IMEI telefono</string>
+    <string name="ui_title_phone">Telefono</string>
+    <string name="ui_label_number">Numero di telefono</string>
+    <string name="ui_title_sim">Carta SIM</string>
+    <string name="ui_value_notdefined">non impostato</string>
+    <string name="ui_label_operator">Operatore</string>
+    <string name="ui_label_subscriber">Subscriber ID</string>
+</resources>
