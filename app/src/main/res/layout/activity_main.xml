@@ -41,6 +41,16 @@
                 <EditText
                     android:id="@+id/imei_value"
                     style="@style/ui_infos_value" />
+
+                <TextView
+                    android:id="@+id/swver_label"
+                    style="@style/ui_infos_label"
+                    android:text="@string/ui_label_swver" />
+
+                <EditText
+                    android:id="@+id/swver_value"
+                    style="@style/ui_infos_value" />
+
             </LinearLayout>
 
             <TextView

@@ -10,4 +10,7 @@
     <string name="ui_value_notdefined">non impostato</string>
     <string name="ui_label_operator">Operatore</string>
     <string name="ui_label_subscriber">Subscriber ID</string>
+    <string name="activity_no_perms_message">L\'app non può funzionare senza i permessi</string>
+    <string name="ui_button_close">Chiudi</string>
+    <string name="ui_label_swver">Versione Software</string>
 </resources>

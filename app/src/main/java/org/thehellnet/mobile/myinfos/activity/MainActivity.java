@@ -1,7 +1,13 @@
 package org.thehellnet.mobile.myinfos.activity;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.telephony.TelephonyManager;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,7 +19,9 @@ import org.thehellnet.mobile.myinfos.MyInfos;
 import org.thehellnet.mobile.myinfos.R;
 import org.thehellnet.mobile.myinfos.utility.AppUtils;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
+
+    private static final int REQUEST_CODE_READ_PHONE_STATE = 1;
 
     private TelephonyManager telephonyManager;
 
@@ -46,11 +54,46 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        updateUiValues();
+
+        if (checkPermissions()) {
+            updateUiValues();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (grantResults.length > 0) {
+            switch (requestCode) {
+                case REQUEST_CODE_READ_PHONE_STATE:
+                    if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                        updateUiValues();
+                    } else {
+                        startActivity(new Intent(MyInfos.getAppContext(), NoPermsActivity.class));
+                        finish();
+                    }
+                    break;
+            }
+        }
     }
 
     private void initPrivates() {
         telephonyManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+    }
+
+    private boolean checkPermissions() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)
+                == PackageManager.PERMISSION_GRANTED) {
+            return true;
+        } else {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.READ_PHONE_STATE},
+                    REQUEST_CODE_READ_PHONE_STATE);
+        }
+        return false;
     }
 
     private void updateUiVersion() {
@@ -59,19 +102,41 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateUiValues() {
-        EditText imei = (EditText) findViewById(R.id.imei_value);
-        imei.setText(telephonyManager.getDeviceId());
+        if (telephonyManager == null) {
+            return;
+        }
 
-        EditText iccid = (EditText) findViewById(R.id.iccid_value);
-        iccid.setText(telephonyManager.getSimSerialNumber());
-        EditText number = (EditText) findViewById(R.id.number_value);
-        number.setText(telephonyManager.getLine1Number().length() > 0
-                ? telephonyManager.getLine1Number()
-                : getString(R.string.ui_value_notdefined));
-        EditText operator = (EditText) findViewById(R.id.operator_value);
-        operator.setText(telephonyManager.getNetworkOperatorName());
-        EditText subscriber = (EditText) findViewById(R.id.subscriber_value);
-        subscriber.setText(telephonyManager.getSubscriberId());
+        if (telephonyManager.getDeviceId() != null) {
+            EditText imei = (EditText) findViewById(R.id.imei_value);
+            imei.setText(telephonyManager.getDeviceId());
+        }
+
+        if (telephonyManager.getDeviceSoftwareVersion() != null) {
+            EditText swver = (EditText) findViewById(R.id.swver_value);
+            swver.setText(telephonyManager.getDeviceSoftwareVersion());
+        }
+
+        if (telephonyManager.getSimSerialNumber() != null) {
+            EditText iccid = (EditText) findViewById(R.id.iccid_value);
+            iccid.setText(telephonyManager.getSimSerialNumber());
+        }
+
+        if (telephonyManager.getLine1Number() != null) {
+            EditText number = (EditText) findViewById(R.id.number_value);
+            number.setText(telephonyManager.getLine1Number().length() > 0
+                    ? telephonyManager.getLine1Number()
+                    : getString(R.string.ui_value_notdefined));
+        }
+
+        if (telephonyManager.getNetworkOperatorName() != null) {
+            EditText operator = (EditText) findViewById(R.id.operator_value);
+            operator.setText(telephonyManager.getNetworkOperatorName());
+        }
+
+        if (telephonyManager.getSubscriberId() != null) {
+            EditText subscriber = (EditText) findViewById(R.id.subscriber_value);
+            subscriber.setText(telephonyManager.getSubscriberId());
+        }
     }
 
     private void showVersionToast() {

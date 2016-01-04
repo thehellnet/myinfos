@@ -3,8 +3,11 @@
 
     <string name="menu_version">menu_version</string>
 
+    <string name="activity_no_perms_message">activity_no_perms_message</string>
+
     <string name="ui_title_phone">ui_title_phone</string>
     <string name="ui_label_imei">ui_label_imei</string>
+    <string name="ui_label_swver">ui_label_swver</string>
 
     <string name="ui_title_sim">ui_title_sim</string>
     <string name="ui_label_iccid">ui_label_iccid</string>
@@ -13,4 +16,6 @@
     <string name="ui_label_subscriber">ui_label_subscriber</string>
 
     <string name="ui_value_notdefined">ui_value_notdefined</string>
+
+    <string name="ui_button_close">ui_button_close</string>
 </resources>

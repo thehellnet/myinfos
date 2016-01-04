@@ -10,4 +10,7 @@
     <string name="ui_value_notdefined">not defined</string>
     <string name="ui_label_operator">Operator (Carrier)</string>
     <string name="ui_label_subscriber">Subscriber ID</string>
+    <string name="activity_no_perms_message">App cannot work!!\nNo permissions to read phone state</string>
+    <string name="ui_button_close">Close</string>
+    <string name="ui_label_swver">Software Version</string>
 </resources>
