@@ -10,7 +10,9 @@
     <string name="ui_label_swver">ui_label_swver</string>
 
     <string name="ui_title_sim">ui_title_sim</string>
-    <string name="ui_label_iccid">ui_label_iccid</string>
+    <string name="ui_label_sim_iccid">ui_label_sim_iccid</string>
+    <string name="ui_label_sim_country">ui_label_sim_country</string>
+    <string name="ui_label_sim_operator">ui_label_sim_operator</string>
     <string name="ui_label_number">ui_label_number</string>
     <string name="ui_label_operator">ui_label_operator</string>
     <string name="ui_label_subscriber">ui_label_subscriber</string>

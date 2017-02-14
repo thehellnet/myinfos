@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">My Infos</string>
     <string name="menu_version">Versione</string>
-    <string name="ui_label_iccid">ICCID (Seriale SIM)</string>
+    <string name="ui_label_sim_iccid">SIM ICCID (Seriale)</string>
     <string name="ui_label_imei">IMEI telefono</string>
     <string name="ui_title_phone">Telefono</string>
     <string name="ui_label_number">Numero di telefono</string>
@@ -13,4 +13,6 @@
     <string name="activity_no_perms_message">L\'app non può funzionare senza i permessi</string>
     <string name="ui_button_close">Chiudi</string>
     <string name="ui_label_swver">Versione Software</string>
+    <string name="ui_label_sim_country">Codice ISO Country SIM</string>
+    <string name="ui_label_sim_operator">Nome Operatore SIM</string>
 </resources>

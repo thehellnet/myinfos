@@ -65,12 +65,30 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/iccid_label"
+                    android:id="@+id/sim_iccid_label"
                     style="@style/ui_infos_label"
-                    android:text="@string/ui_label_iccid" />
+                    android:text="@string/ui_label_sim_iccid" />
 
                 <EditText
-                    android:id="@+id/iccid_value"
+                    android:id="@+id/sim_iccid_value"
+                    style="@style/ui_infos_value" />
+
+                <TextView
+                    android:id="@+id/sim_country_label"
+                    style="@style/ui_infos_label"
+                    android:text="@string/ui_label_sim_country" />
+
+                <EditText
+                    android:id="@+id/sim_country_value"
+                    style="@style/ui_infos_value" />
+
+                <TextView
+                    android:id="@+id/sim_operator_label"
+                    style="@style/ui_infos_label"
+                    android:text="@string/ui_label_sim_operator" />
+
+                <EditText
+                    android:id="@+id/sim_operator_value"
                     style="@style/ui_infos_value" />
 
                 <TextView
@@ -80,7 +98,8 @@
 
                 <EditText
                     android:id="@+id/number_value"
-                    style="@style/ui_infos_value" />
+                    style="@style/ui_infos_value"
+                    android:inputType="number" />
 
                 <TextView
                     android:id="@+id/operator_label"

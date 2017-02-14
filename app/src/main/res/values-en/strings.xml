@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">My Infos</string>
     <string name="ui_label_imei">Phone IMEI</string>
-    <string name="ui_label_iccid">ICCID (SIM serial number)</string>
+    <string name="ui_label_sim_iccid">SIM ICCID (serial number)</string>
     <string name="menu_version">Version</string>
     <string name="ui_title_phone">Phone</string>
     <string name="ui_label_number">Phone number</string>
@@ -13,4 +13,6 @@
     <string name="activity_no_perms_message">App cannot work!!\nNo permissions to read phone state</string>
     <string name="ui_button_close">Close</string>
     <string name="ui_label_swver">Software Version</string>
+    <string name="ui_label_sim_country">SIM Country ISO code</string>
+    <string name="ui_label_sim_operator">SIM Operator Name</string>
 </resources>
