@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">My Infos</string>
     <string name="menu_version">Versione</string>
     <string name="ui_label_sim_iccid">SIM ICCID (Seriale)</string>
     <string name="ui_label_imei">IMEI telefono</string>
@@ -15,4 +14,7 @@
     <string name="ui_label_swver">Versione Software</string>
     <string name="ui_label_sim_country">Codice ISO Country SIM</string>
     <string name="ui_label_sim_operator">Nome Operatore SIM</string>
+    <string name="ui_label_network_count">Celle visibili</string>
+    <string name="ui_label_network_type">Tipologia rete</string>
+    <string name="ui_label_device_id">ID dispositivo</string>
 </resources>

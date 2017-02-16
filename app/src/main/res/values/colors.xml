@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="app_version_value">#FF2A2A11</color>
+    <color name="space_separator">#FFAAAAAA</color>
+    <color name="text_not_defined">#FFBBBBBB</color>
 </resources>

@@ -22,135 +22,208 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/infos_phone_title_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical">
+                android:layout_height="wrap_content">
 
                 <ImageView
                     android:id="@+id/phone_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
                     android:src="@drawable/icon_smartphone" />
 
-                <TextView
-                    android:id="@+id/phone_title"
-                    style="@style/ui_infos_title"
-                    android:text="@string/ui_title_phone" />
+                <LinearLayout
+                    android:id="@+id/infos_phone_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="vertical">
 
-            </LinearLayout>
+                    <TextView
+                        android:id="@+id/imei_label"
+                        style="@style/ui_infos_label"
+                        android:text="@string/ui_label_imei" />
+
+                    <EditText
+                        android:id="@+id/imei_value"
+                        style="@style/ui_infos_value" />
+
+                    <TextView
+                        android:id="@+id/swver_label"
+                        style="@style/ui_infos_label"
+                        android:text="@string/ui_label_swver" />
+
+                    <EditText
+                        android:id="@+id/swver_value"
+                        style="@style/ui_infos_value" />
+
+                    <TextView
+                        android:id="@+id/device_id_label"
+                        style="@style/ui_infos_label"
+                        android:text="@string/ui_label_device_id" />
+
+                    <EditText
+                        android:id="@+id/device_id_value"
+                        style="@style/ui_infos_value" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
 
             <LinearLayout
-                android:id="@+id/infos_phone_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="2dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/space_separator" />
 
-                <TextView
-                    android:id="@+id/imei_label"
-                    style="@style/ui_infos_label"
-                    android:text="@string/ui_label_imei" />
-
-                <EditText
-                    android:id="@+id/imei_value"
-                    style="@style/ui_infos_value" />
-
-                <TextView
-                    android:id="@+id/swver_label"
-                    style="@style/ui_infos_label"
-                    android:text="@string/ui_label_swver" />
-
-                <EditText
-                    android:id="@+id/swver_value"
-                    style="@style/ui_infos_value" />
-
-            </LinearLayout>
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
-
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/infos_sim_title_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical">
+                android:layout_height="wrap_content">
 
                 <ImageView
                     android:id="@+id/sim_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
                     android:src="@drawable/icon_sim" />
 
-                <TextView
-                    android:id="@+id/sim_title"
-                    style="@style/ui_infos_title"
-                    android:text="@string/ui_title_sim" />
+                <LinearLayout
+                    android:id="@+id/infos_sim_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="vertical">
 
-            </LinearLayout>
+                    <TextView
+                        android:id="@+id/sim_iccid_label"
+                        style="@style/ui_infos_label"
+                        android:text="@string/ui_label_sim_iccid" />
+
+                    <EditText
+                        android:id="@+id/sim_iccid_value"
+                        style="@style/ui_infos_value" />
+
+                    <TextView
+                        android:id="@+id/sim_country_label"
+                        style="@style/ui_infos_label"
+                        android:text="@string/ui_label_sim_country" />
+
+                    <EditText
+                        android:id="@+id/sim_country_value"
+                        style="@style/ui_infos_value" />
+
+                    <TextView
+                        android:id="@+id/sim_operator_label"
+                        style="@style/ui_infos_label"
+                        android:text="@string/ui_label_sim_operator" />
+
+                    <EditText
+                        android:id="@+id/sim_operator_value"
+                        style="@style/ui_infos_value" />
+
+                    <TextView
+                        android:id="@+id/number_label"
+                        style="@style/ui_infos_label"
+                        android:text="@string/ui_label_number" />
+
+                    <EditText
+                        android:id="@+id/number_value"
+                        style="@style/ui_infos_value"
+                        android:editable="false"
+                        android:inputType="number"
+                        android:textIsSelectable="true" />
+
+                    <TextView
+                        android:id="@+id/operator_label"
+                        style="@style/ui_infos_label"
+                        android:text="@string/ui_label_operator" />
+
+                    <EditText
+                        android:id="@+id/operator_value"
+                        style="@style/ui_infos_value" />
+
+                    <TextView
+                        android:id="@+id/subscriber_label"
+                        style="@style/ui_infos_label"
+                        android:text="@string/ui_label_subscriber" />
+
+                    <EditText
+                        android:id="@+id/subscriber_value"
+                        style="@style/ui_infos_value" />
+                </LinearLayout>
+            </RelativeLayout>
 
             <LinearLayout
-                android:id="@+id/infos_sim_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="2dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/space_separator" />
 
-                <TextView
-                    android:id="@+id/sim_iccid_label"
-                    style="@style/ui_infos_label"
-                    android:text="@string/ui_label_sim_iccid" />
+            <RelativeLayout
+                android:id="@+id/infos_network_title_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                <EditText
-                    android:id="@+id/sim_iccid_value"
-                    style="@style/ui_infos_value" />
+                <ImageView
+                    android:id="@+id/network_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/icon_network" />
 
-                <TextView
-                    android:id="@+id/sim_country_label"
-                    style="@style/ui_infos_label"
-                    android:text="@string/ui_label_sim_country" />
+                <LinearLayout
+                    android:id="@+id/infos_network_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/sim_country_value"
-                    style="@style/ui_infos_value" />
+                    <TextView
+                        android:id="@+id/network_type_label"
+                        style="@style/ui_infos_label"
+                        android:text="@string/ui_label_network_type" />
 
-                <TextView
-                    android:id="@+id/sim_operator_label"
-                    style="@style/ui_infos_label"
-                    android:text="@string/ui_label_sim_operator" />
+                    <EditText
+                        android:id="@+id/network_type_value"
+                        style="@style/ui_infos_value" />
 
-                <EditText
-                    android:id="@+id/sim_operator_value"
-                    style="@style/ui_infos_value" />
+                    <TextView
+                        android:id="@+id/network_count_label"
+                        style="@style/ui_infos_label"
+                        android:text="@string/ui_label_network_count" />
 
-                <TextView
-                    android:id="@+id/number_label"
-                    style="@style/ui_infos_label"
-                    android:text="@string/ui_label_number" />
+                    <EditText
+                        android:id="@+id/network_count_value"
+                        style="@style/ui_infos_value" />
 
-                <EditText
-                    android:id="@+id/number_value"
-                    style="@style/ui_infos_value"
-                    android:inputType="number" />
+                    <EditText
+                        android:id="@+id/network_celllist_value"
+                        style="@style/ui_infos_value"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="5dp"
+                        android:editable="false"
+                        android:ems="10"
+                        android:inputType="textMultiLine"
+                        android:textIsSelectable="true" />
 
-                <TextView
-                    android:id="@+id/operator_label"
-                    style="@style/ui_infos_label"
-                    android:text="@string/ui_label_operator" />
-
-                <EditText
-                    android:id="@+id/operator_value"
-                    style="@style/ui_infos_value" />
-
-                <TextView
-                    android:id="@+id/subscriber_label"
-                    style="@style/ui_infos_label"
-                    android:text="@string/ui_label_subscriber" />
-
-                <EditText
-                    android:id="@+id/subscriber_value"
-                    style="@style/ui_infos_value" />
-            </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
         </LinearLayout>
     </ScrollView>
 
@@ -166,7 +239,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
             android:layout_centerVertical="true" />
     </RelativeLayout>
 </RelativeLayout>

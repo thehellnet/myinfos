@@ -8,6 +8,7 @@
     <string name="ui_title_phone">ui_title_phone</string>
     <string name="ui_label_imei">ui_label_imei</string>
     <string name="ui_label_swver">ui_label_swver</string>
+    <string name="ui_label_device_id">ui_label_device_id</string>
 
     <string name="ui_title_sim">ui_title_sim</string>
     <string name="ui_label_sim_iccid">ui_label_sim_iccid</string>
@@ -16,6 +17,8 @@
     <string name="ui_label_number">ui_label_number</string>
     <string name="ui_label_operator">ui_label_operator</string>
     <string name="ui_label_subscriber">ui_label_subscriber</string>
+    <string name="ui_label_network_type">ui_label_network_type</string>
+    <string name="ui_label_network_count">ui_label_network_count</string>
 
     <string name="ui_value_notdefined">ui_value_notdefined</string>
 
