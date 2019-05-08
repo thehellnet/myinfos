@@ -1,20 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="ui_label_imei">Phone IMEI</string>
-    <string name="ui_label_sim_iccid">SIM ICCID (serial number)</string>
     <string name="menu_version">Version</string>
     <string name="ui_title_phone">Phone</string>
-    <string name="ui_label_number">Phone number</string>
     <string name="ui_title_sim">SIM</string>
     <string name="ui_value_notdefined">not defined</string>
-    <string name="ui_label_operator">Operator (Carrier)</string>
-    <string name="ui_label_subscriber">Subscriber ID</string>
     <string name="activity_no_perms_message">App cannot work!!\nNo permissions to read phone state</string>
     <string name="ui_button_close">Close</string>
     <string name="ui_label_swver">Software Version</string>
-    <string name="ui_label_sim_country">SIM Country ISO code</string>
-    <string name="ui_label_sim_operator">SIM Operator Name</string>
     <string name="ui_label_network_count">Visible network cells</string>
     <string name="ui_label_network_type">Network Type</string>
     <string name="ui_label_device_id">Device ID</string>
+    <string name="ui_image_network">Network</string>
+    <string name="ui_image_phone">Phone</string>
+    <string name="ui_image_sim">SIM</string>
+    <string name="ui_label_sim1_country">SIM 1 Country ISO code</string>
+    <string name="ui_label_sim1_iccid">SIM 1 ICCID (serial number)</string>
+    <string name="ui_label_sim1_operator">SIM 1 Operator Name</string>
+    <string name="ui_title_network">Network</string>
+    <string name="ui_label_subscriber1">Subscriber ID 1</string>
+    <string name="ui_label_number1">Phone number 1</string>
+    <string name="ui_label_imei1">Phone IMEI 1</string>
+    <string name="ui_label_number2">Phone number 2</string>
+    <string name="ui_label_sim2_operator">SIM 2 Operator Name</string>
+    <string name="ui_label_sim2_iccid">SIM 2 ICCID (serial number)</string>
+    <string name="ui_label_sim2_country">SIM 2 Country ISO code</string>
+    <string name="ui_label_subscriber2">Subscriber ID 2</string>
+    <string name="ui_label_imei2">Phone IMEI 2</string>
+    <string name="ui_label_carrier1">Carrier 1</string>
+    <string name="ui_label_carrier2">Carrier 1</string>
 </resources>

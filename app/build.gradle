@@ -1,15 +1,15 @@
 apply plugin: "com.android.application"
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
 
     defaultConfig {
         applicationId "org.thehellnet.mobile.myinfos"
         minSdkVersion 17
-        targetSdkVersion 25
-        versionCode 15
-        versionName "1.99.4"
+        targetSdkVersion 28
+        versionCode 17
+        versionName "1.99.10"
     }
 
     buildTypes {
@@ -21,6 +21,7 @@ android {
 }
 
 dependencies {
-    compile group: "com.android.support", name: "appcompat-v7", version: "25.1.1"
-    compile group: "com.google.android.gms", name: "play-services-gcm", version: "10.2.0"
+    implementation group: "androidx.appcompat", name: "appcompat", version: "1.0.2"
+    implementation group: "com.google.android.gms", name: "play-services-gcm", version: "16.1.0"
+    implementation group: "com.google.android.material", name: "material", version: "1.0.0"
 }
