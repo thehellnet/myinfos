@@ -13,9 +13,11 @@ import org.thehellnet.mobile.myinfos.R;
 
 import static android.content.Context.TELEPHONY_SERVICE;
 
-public class SIM1Fragment extends AbstractFragment {
+public class SIMFragment extends AbstractFragment {
 
-    private static final String TAG = SIM1Fragment.class.getName();
+    private static final String TAG = SIMFragment.class.getName();
+
+    private final int simNumber;
 
     private TelephonyManager telephonyManager;
     private SubscriptionManager subscriptionManager;
@@ -27,9 +29,13 @@ public class SIM1Fragment extends AbstractFragment {
     private EditText carrier;
     private EditText subscriber;
 
+    public SIMFragment(int simNumber) {
+        this.simNumber = simNumber;
+    }
+
     @Override
     protected int getLayout() {
-        return R.layout.fragment_sim1;
+        return R.layout.fragment_sim;
     }
 
     @Override
@@ -40,19 +46,19 @@ public class SIM1Fragment extends AbstractFragment {
             subscriptionManager = (SubscriptionManager) getActivity().getSystemService(Context.TELEPHONY_SUBSCRIPTION_SERVICE);
         }
 
-        iccid = view.findViewById(R.id.sim1_iccid_value);
-        country = view.findViewById(R.id.sim1_country_value);
-        operator = view.findViewById(R.id.sim1_operator_value);
-        number = view.findViewById(R.id.number1_value);
-        carrier = view.findViewById(R.id.carrier1_value);
-        subscriber = view.findViewById(R.id.subscriber1_value);
+        iccid = view.findViewById(R.id.sim_iccid_value);
+        country = view.findViewById(R.id.sim_country_value);
+        operator = view.findViewById(R.id.sim_operator_value);
+        number = view.findViewById(R.id.number_value);
+        carrier = view.findViewById(R.id.carrier_value);
+        subscriber = view.findViewById(R.id.subscriber_value);
     }
 
     @Override
     protected void computeValues() throws SecurityException {
         try {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                SubscriptionInfo activeSubscriptionInfo = subscriptionManager.getActiveSubscriptionInfo(1);
+                SubscriptionInfo activeSubscriptionInfo = subscriptionManager.getActiveSubscriptionInfo(simNumber);
 
                 if (activeSubscriptionInfo != null) {
                     updateEditTextValue(iccid, activeSubscriptionInfo.getIccId());
@@ -60,7 +66,7 @@ public class SIM1Fragment extends AbstractFragment {
                     updateEditTextValue(operator, activeSubscriptionInfo.getDisplayName().toString());
                     updateEditTextValue(number, activeSubscriptionInfo.getNumber());
                     updateEditTextValue(carrier, activeSubscriptionInfo.getCarrierName().toString());
-                    updateEditTextValue(subscriber, String.valueOf(activeSubscriptionInfo.getSubscriptionId()));
+                    updateEditTextValue(subscriber, telephonyManager.getSubscriberId());
                 }
             } else {
                 updateEditTextValue(iccid, telephonyManager.getSimSerialNumber());

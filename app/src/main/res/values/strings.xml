@@ -14,19 +14,12 @@
 
     <string name="ui_title_sim">ui_title_sim</string>
     <string name="ui_image_sim">ui_image_sim</string>
-    <string name="ui_label_sim1_iccid">ui_label_sim1_iccid</string>
-    <string name="ui_label_sim1_country">ui_label_sim1_country</string>
-    <string name="ui_label_sim1_operator">ui_label_sim1_operator</string>
-    <string name="ui_label_number1">ui_label_number1</string>
-    <string name="ui_label_carrier1">ui_label_carrier1</string>
-    <string name="ui_label_subscriber1">ui_label_subscriber1</string>
-
-    <string name="ui_label_sim2_iccid">ui_label_sim2_iccid</string>
-    <string name="ui_label_sim2_country">ui_label_sim2_country</string>
-    <string name="ui_label_sim2_operator">ui_label_sim2_operator</string>
-    <string name="ui_label_number2">ui_label_number2</string>
-    <string name="ui_label_carrier2">ui_label_carrier2</string>
-    <string name="ui_label_subscriber2">ui_label_subscriber2</string>
+    <string name="ui_label_sim_iccid">ui_label_sim_iccid</string>
+    <string name="ui_label_sim_country">ui_label_sim_country</string>
+    <string name="ui_label_sim_operator">ui_label_sim_operator</string>
+    <string name="ui_label_number">ui_label_number</string>
+    <string name="ui_label_carrier">ui_label_carrier</string>
+    <string name="ui_label_subscriber">ui_label_subscriber</string>
 
     <string name="ui_title_network">ui_title_network</string>
     <string name="ui_image_network">ui_image_network</string>

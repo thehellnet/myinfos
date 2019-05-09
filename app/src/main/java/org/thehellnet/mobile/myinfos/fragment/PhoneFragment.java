@@ -41,11 +41,11 @@ public class PhoneFragment extends AbstractFragment {
     protected void computeValues() throws SecurityException {
         try {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                updateEditTextValue(imei1, telephonyManager.getImei(1));
-                updateEditTextValue(imei2, telephonyManager.getImei(2));
+                updateEditTextValue(imei1, telephonyManager.getImei(0));
+                updateEditTextValue(imei2, telephonyManager.getImei(1));
             } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                updateEditTextValue(imei1, telephonyManager.getDeviceId(1));
-                updateEditTextValue(imei2, telephonyManager.getDeviceId(2));
+                updateEditTextValue(imei1, telephonyManager.getDeviceId(0));
+                updateEditTextValue(imei2, telephonyManager.getDeviceId(1));
             } else {
                 updateEditTextValue(imei1, telephonyManager.getDeviceId());
             }

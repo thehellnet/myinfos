@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/infos_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -7,51 +10,55 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingBottom="@dimen/activity_vertical_margin">
 
-    <ScrollView
-        android:id="@+id/infos_container"
+    <LinearLayout
+        android:id="@+id/infos_network_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/infos_network_layout"
+        <TextView
+            android:id="@+id/network_type_label"
+            style="@style/ui_infos_label"
+            android:labelFor="@+id/network_type_value"
+            android:text="@string/ui_label_network_type" />
+
+        <EditText
+            android:id="@+id/network_type_value"
+            style="@style/ui_infos_value"
+            tools:ignore="Autofill" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <TextView
+            android:id="@+id/network_count_label"
+            style="@style/ui_infos_label"
+            android:labelFor="@+id/network_count_value"
+            android:text="@string/ui_label_network_count" />
+
+        <EditText
+            android:id="@+id/network_count_value"
+            style="@style/ui_infos_value"
+            android:labelFor="@+id/network_celllist_value"
+            tools:ignore="Autofill" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <EditText
+            android:id="@+id/network_celllist_value"
+            style="@style/ui_infos_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="5dp"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:textIsSelectable="true"
+            tools:ignore="Autofill" />
 
-            <TextView
-                android:id="@+id/network_type_label"
-                style="@style/ui_infos_label"
-                android:labelFor="@+id/network_type_value"
-                android:text="@string/ui_label_network_type" />
+    </LinearLayout>
 
-            <EditText
-                android:id="@+id/network_type_value"
-                style="@style/ui_infos_value" />
-
-            <TextView
-                android:id="@+id/network_count_label"
-                style="@style/ui_infos_label"
-                android:labelFor="@+id/network_count_value"
-                android:text="@string/ui_label_network_count" />
-
-            <EditText
-                android:id="@+id/network_count_value"
-                style="@style/ui_infos_value" />
-
-            <EditText
-                android:id="@+id/network_celllist_value"
-                style="@style/ui_infos_value"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="5dp"
-                android:ems="10"
-                android:inputType="textMultiLine"
-                android:textIsSelectable="true" />
-
-        </LinearLayout>
-
-    </ScrollView>
-
-</RelativeLayout>
+</ScrollView>

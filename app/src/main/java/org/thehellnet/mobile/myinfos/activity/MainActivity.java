@@ -18,8 +18,7 @@ import org.thehellnet.mobile.myinfos.R;
 import org.thehellnet.mobile.myinfos.adapter.TabAdapter;
 import org.thehellnet.mobile.myinfos.fragment.NetworkFragment;
 import org.thehellnet.mobile.myinfos.fragment.PhoneFragment;
-import org.thehellnet.mobile.myinfos.fragment.SIM1Fragment;
-import org.thehellnet.mobile.myinfos.fragment.SIM2Fragment;
+import org.thehellnet.mobile.myinfos.fragment.SIMFragment;
 import org.thehellnet.mobile.myinfos.utility.AppUtils;
 
 import static org.thehellnet.mobile.myinfos.MyInfos.PERMISSIONS;
@@ -47,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
         tabAdapter = new TabAdapter(getSupportFragmentManager());
         tabAdapter.addFragment(new PhoneFragment(), "Phone");
-        tabAdapter.addFragment(new SIM1Fragment(), "SIM 1");
-        tabAdapter.addFragment(new SIM2Fragment(), "SIM 2");
+        tabAdapter.addFragment(new SIMFragment(1), "SIM 1");
+        tabAdapter.addFragment(new SIMFragment(2), "SIM 2");
         tabAdapter.addFragment(new NetworkFragment(), "Network");
 
         viewPager.setAdapter(tabAdapter);

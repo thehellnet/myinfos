@@ -13,19 +13,13 @@
     <string name="ui_image_network">Rete</string>
     <string name="ui_image_phone">Telefono</string>
     <string name="ui_image_sim">SIM</string>
-    <string name="ui_label_sim1_operator">Nome Operatore SIM 1</string>
-    <string name="ui_label_sim1_iccid">SIM 1 ICCID (Seriale)</string>
-    <string name="ui_label_sim1_country">Codice ISO Country SIM 1</string>
+    <string name="ui_label_sim_operator">Nome Operatore</string>
+    <string name="ui_label_sim_iccid">ICCID (Seriale)</string>
+    <string name="ui_label_sim_country">Codice ISO Country</string>
     <string name="ui_title_network">Rete</string>
-    <string name="ui_label_subscriber1">Subscriber ID 1</string>
-    <string name="ui_label_number1">Numero di telefono 1</string>
+    <string name="ui_label_subscriber">Subscriber ID</string>
     <string name="ui_label_imei1">IMEI 1</string>
-    <string name="ui_label_number2">Numero di telefono 2</string>
-    <string name="ui_label_sim2_operator">Nome Operatore SIM 2</string>
-    <string name="ui_label_sim2_iccid">SIM 2 ICCID (Seriale)</string>
-    <string name="ui_label_sim2_country">Codice ISO Country SIM 2</string>
-    <string name="ui_label_subscriber2">Subscriber ID 2</string>
     <string name="ui_label_imei2">IMEI 2</string>
-    <string name="ui_label_carrier1">Operatore 1</string>
-    <string name="ui_label_carrier2">Operatore 2</string>
+    <string name="ui_label_carrier">Operatore</string>
+    <string name="ui_label_number">Numero di telefono</string>
 </resources>
