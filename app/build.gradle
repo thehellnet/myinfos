@@ -8,8 +8,8 @@ android {
         applicationId "org.thehellnet.mobile.myinfos"
         minSdkVersion 17
         targetSdkVersion 29
-        versionCode 18
-        versionName "1.99.11"
+        versionCode 20
+        versionName "1.99.20"
     }
 
     buildTypes {
@@ -17,6 +17,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
+    }
+    compileOptions {
+        sourceCompatibility = 1.7
+        targetCompatibility = 1.7
     }
 }
 
