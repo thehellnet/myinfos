@@ -22,6 +22,13 @@ public class PhoneFragment extends AbstractFragment {
     private EditText swver;
     private EditText deviceId;
 
+    public PhoneFragment() {
+    }
+
+    public PhoneFragment(int contentLayoutId) {
+        super(contentLayoutId);
+    }
+
     @Override
     protected int getLayout() {
         return R.layout.fragment_phone;

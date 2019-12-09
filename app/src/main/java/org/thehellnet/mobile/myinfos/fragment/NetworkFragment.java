@@ -35,6 +35,13 @@ public class NetworkFragment extends AbstractFragment {
     private EditText networkType;
     private EditText cellList;
 
+    public NetworkFragment() {
+    }
+
+    public NetworkFragment(int contentLayoutId) {
+        super(contentLayoutId);
+    }
+
     @Override
     protected int getLayout() {
         return R.layout.fragment_network;

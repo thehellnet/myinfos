@@ -17,7 +17,7 @@ public class SIMFragment extends AbstractFragment {
 
     private static final String TAG = SIMFragment.class.getName();
 
-    private final int simNumber;
+    private int simNumber = 1;
 
     private TelephonyManager telephonyManager;
     private SubscriptionManager subscriptionManager;
@@ -28,6 +28,9 @@ public class SIMFragment extends AbstractFragment {
     private EditText number;
     private EditText carrier;
     private EditText subscriber;
+
+    public SIMFragment() {
+    }
 
     public SIMFragment(int simNumber) {
         this.simNumber = simNumber;

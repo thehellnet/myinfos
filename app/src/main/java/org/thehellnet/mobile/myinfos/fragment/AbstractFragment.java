@@ -14,6 +14,13 @@ import org.thehellnet.mobile.myinfos.R;
 
 public abstract class AbstractFragment extends Fragment {
 
+    public AbstractFragment() {
+    }
+
+    public AbstractFragment(int contentLayoutId) {
+        super(contentLayoutId);
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
