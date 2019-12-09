@@ -26,6 +26,7 @@ public abstract class AbstractFragment extends Fragment {
     public void onResume() {
         super.onResume();
 
+        preparePhone();
         computeValues();
     }
 
@@ -39,6 +40,9 @@ public abstract class AbstractFragment extends Fragment {
         }
 
         editText.setText(text);
+    }
+
+    protected void preparePhone() {
     }
 
     protected abstract int getLayout();

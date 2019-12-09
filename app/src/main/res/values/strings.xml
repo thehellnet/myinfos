@@ -4,6 +4,7 @@
     <string name="menu_version">menu_version</string>
 
     <string name="activity_no_perms_message">activity_no_perms_message</string>
+    <string name="activity_no_gps_message">activity_no_gps_message</string>
 
     <string name="ui_title_phone">ui_title_phone</string>
     <string name="ui_image_phone">ui_image_phone</string>
@@ -29,4 +30,7 @@
     <string name="ui_value_notdefined">ui_value_notdefined</string>
 
     <string name="ui_button_close">ui_button_close</string>
+
+    <string name="yes">yes</string>
+    <string name="no">no</string>
 </resources>
