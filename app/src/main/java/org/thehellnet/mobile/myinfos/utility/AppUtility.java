@@ -1,12 +1,13 @@
 package org.thehellnet.mobile.myinfos.utility;
 
+import android.content.Context;
+
 import org.thehellnet.mobile.myinfos.BuildConfig;
-import org.thehellnet.mobile.myinfos.MyInfos;
 
 /**
  * Created by sardylan on 30/08/15.
  */
-public final class AppUtils {
+public final class AppUtility {
 
     public static String getAppVersion() {
         return String.format("%s - %s",
@@ -14,8 +15,8 @@ public final class AppUtils {
                 BuildConfig.VERSION_CODE);
     }
 
-    public static String getDensityName() {
-        float density = MyInfos.getAppContext().getResources().getDisplayMetrics().density;
+    public static String getDensityName(Context context) {
+        float density = context.getResources().getDisplayMetrics().density;
 
         if (density >= 4.0) {
             return "xxxhdpi";

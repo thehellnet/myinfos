@@ -25,4 +25,5 @@
     <string name="ui_label_number">Phone number</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="ui_message_permission">Starting from Android 10, some restricted and sensible information can\'t be read anymore by Apps installed from the Play Store. The message \"NO PERMISSION\" will appear on the value.</string>
 </resources>

@@ -72,6 +72,18 @@
             style="@style/ui_infos_value"
             tools:ignore="Autofill" />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+
+        <TextView
+            android:id="@+id/text_label"
+            style="@style/ui_infos_label"
+            android:labelFor="@+id/device_id_value"
+            android:textAlignment="gravity"
+            android:text="@string/ui_message_permission" />
+
+
     </LinearLayout>
 
 </ScrollView>

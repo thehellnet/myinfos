@@ -1,5 +1,7 @@
 package org.thehellnet.mobile.myinfos.cell;
 
+import androidx.annotation.NonNull;
+
 import java.util.Locale;
 
 /**
@@ -25,6 +27,7 @@ public class CellData {
         this.type = type;
     }
 
+    @NonNull
     @Override
     public String toString() {
         String commonInfo = String.format(Locale.US, "[%s] %s (%d dbm)", type.toString(), code, dbm);

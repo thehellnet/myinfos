@@ -1,5 +1,8 @@
 package org.thehellnet.mobile.myinfos.fragment;
 
+import static android.content.Context.TELEPHONY_SERVICE;
+
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Build;
 import android.telephony.SubscriptionInfo;
@@ -10,8 +13,6 @@ import android.view.View;
 import android.widget.EditText;
 
 import org.thehellnet.mobile.myinfos.R;
-
-import static android.content.Context.TELEPHONY_SERVICE;
 
 public class SIMFragment extends AbstractFragment {
 
@@ -42,11 +43,11 @@ public class SIMFragment extends AbstractFragment {
     }
 
     @Override
-    protected void initPrivates(View view) {
-        telephonyManager = (TelephonyManager) getActivity().getSystemService(TELEPHONY_SERVICE);
+    protected void initVars(View view) {
+        telephonyManager = (TelephonyManager) applicationContext.getSystemService(TELEPHONY_SERVICE);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
-            subscriptionManager = (SubscriptionManager) getActivity().getSystemService(Context.TELEPHONY_SUBSCRIPTION_SERVICE);
+            subscriptionManager = (SubscriptionManager) applicationContext.getSystemService(Context.TELEPHONY_SUBSCRIPTION_SERVICE);
         }
 
         iccid = view.findViewById(R.id.sim_iccid_value);
@@ -57,6 +58,7 @@ public class SIMFragment extends AbstractFragment {
         subscriber = view.findViewById(R.id.subscriber_value);
     }
 
+    @SuppressLint("HardwareIds")
     @Override
     protected void computeValues() throws SecurityException {
         try {

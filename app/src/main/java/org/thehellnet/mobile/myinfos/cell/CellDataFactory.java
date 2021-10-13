@@ -22,9 +22,9 @@ public final class CellDataFactory {
             return parseCellGsm((CellInfoGsm) cellInfo);
         } else if (cellInfo instanceof CellInfoCdma) {
             return parseCellCdma((CellInfoCdma) cellInfo);
-        } else if (cellInfo instanceof CellInfoWcdma) {
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2 && cellInfo instanceof CellInfoWcdma) {
             return parseCellWcdma((CellInfoWcdma) cellInfo);
-        } else if (cellInfo instanceof CellInfoLte) {
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2 && cellInfo instanceof CellInfoLte) {
             return parseCellLte((CellInfoLte) cellInfo);
         } else {
             return null;

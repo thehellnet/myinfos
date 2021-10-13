@@ -1,5 +1,8 @@
 package org.thehellnet.mobile.myinfos.fragment;
 
+import static android.content.Context.TELEPHONY_SERVICE;
+
+import android.annotation.SuppressLint;
 import android.os.Build;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
@@ -7,9 +10,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
-import org.thehellnet.mobile.myinfos.R;
+import androidx.fragment.app.FragmentActivity;
 
-import static android.content.Context.TELEPHONY_SERVICE;
+import org.thehellnet.mobile.myinfos.R;
 
 public class PhoneFragment extends AbstractFragment {
 
@@ -35,8 +38,14 @@ public class PhoneFragment extends AbstractFragment {
     }
 
     @Override
-    protected void initPrivates(View view) {
-        telephonyManager = (TelephonyManager) getActivity().getSystemService(TELEPHONY_SERVICE);
+    protected void initVars(View view) {
+        FragmentActivity activity = getActivity();
+        if (activity == null) {
+            Log.e(TAG, "Activity null");
+            return;
+        }
+
+        telephonyManager = (TelephonyManager) applicationContext.getSystemService(TELEPHONY_SERVICE);
 
         imei1 = view.findViewById(R.id.imei1_value);
         imei2 = view.findViewById(R.id.imei2_value);
@@ -44,23 +53,55 @@ public class PhoneFragment extends AbstractFragment {
         deviceId = view.findViewById(R.id.device_id_value);
     }
 
+    @SuppressLint("HardwareIds")
     @Override
     protected void computeValues() throws SecurityException {
+        String imei1Value = "NOT AVAILABLE";
+        String imei2Value = "NOT AVAILABLE";
+        String softwareVersion = "NOT AVAILABLE";
+        String androidId = "NOT AVAILABLE";
+
         try {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                updateEditTextValue(imei1, telephonyManager.getImei(0));
-                updateEditTextValue(imei2, telephonyManager.getImei(1));
+                imei1Value = telephonyManager.getImei(0);
             } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                updateEditTextValue(imei1, telephonyManager.getDeviceId(0));
-                updateEditTextValue(imei2, telephonyManager.getDeviceId(1));
+                imei1Value = telephonyManager.getDeviceId(0);
             } else {
-                updateEditTextValue(imei1, telephonyManager.getDeviceId());
+                imei1Value = telephonyManager.getDeviceId();
             }
-
-            updateEditTextValue(swver, telephonyManager.getDeviceSoftwareVersion());
-            updateEditTextValue(deviceId, Settings.Secure.getString(getActivity().getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID));
         } catch (SecurityException e) {
             Log.e(TAG, e.getMessage());
+            imei1Value = "NO PERMISSION";
         }
+
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                imei2Value = telephonyManager.getImei(1);
+            } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                imei2Value = telephonyManager.getDeviceId(1);
+            }
+        } catch (SecurityException e) {
+            Log.e(TAG, e.getMessage());
+            imei2Value = "NO PERMISSION";
+        }
+
+        try {
+            softwareVersion = telephonyManager.getDeviceSoftwareVersion();
+        } catch (SecurityException e) {
+            Log.e(TAG, e.getMessage());
+            softwareVersion = "NO PERMISSION";
+        }
+
+        try {
+            androidId = Settings.Secure.getString(applicationContext.getContentResolver(), Settings.Secure.ANDROID_ID);
+        } catch (SecurityException e) {
+            Log.e(TAG, e.getMessage());
+            androidId = "NO PERMISSION";
+        }
+
+        updateEditTextValue(imei1, imei1Value);
+        updateEditTextValue(imei2, imei2Value);
+        updateEditTextValue(swver, softwareVersion);
+        updateEditTextValue(deviceId, androidId);
     }
 }

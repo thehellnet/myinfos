@@ -25,4 +25,5 @@
     <string name="ui_label_number">Numero di telefono</string>
     <string name="yes">Si</string>
     <string name="no">No</string>
+    <string name="ui_message_permission">A partire da Android 10 alcuni dati e valori sensibili non possono più essere letti dalle App installate dal Play Store. In tal caso, al posto del valore verrà visualizzata la scritta \"NO PERMISSION\".</string>
 </resources>

@@ -1,5 +1,9 @@
 package org.thehellnet.mobile.myinfos.fragment;
 
+import static android.content.Context.CONNECTIVITY_SERVICE;
+import static android.content.Context.LOCATION_SERVICE;
+import static android.content.Context.TELEPHONY_SERVICE;
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,16 +16,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import androidx.fragment.app.FragmentActivity;
+
 import org.thehellnet.mobile.myinfos.R;
 import org.thehellnet.mobile.myinfos.cell.CellData;
 import org.thehellnet.mobile.myinfos.cell.CellDataFactory;
 
 import java.util.List;
 import java.util.Locale;
-
-import static android.content.Context.CONNECTIVITY_SERVICE;
-import static android.content.Context.LOCATION_SERVICE;
-import static android.content.Context.TELEPHONY_SERVICE;
 
 public class NetworkFragment extends AbstractFragment {
 
@@ -48,10 +50,10 @@ public class NetworkFragment extends AbstractFragment {
     }
 
     @Override
-    protected void initPrivates(View view) {
-        telephonyManager = (TelephonyManager) getActivity().getSystemService(TELEPHONY_SERVICE);
-        connectivityManager = (ConnectivityManager) getActivity().getSystemService(CONNECTIVITY_SERVICE);
-        locationManager = (LocationManager) getActivity().getSystemService(LOCATION_SERVICE);
+    protected void initVars(View view) {
+        telephonyManager = (TelephonyManager) applicationContext.getSystemService(TELEPHONY_SERVICE);
+        connectivityManager = (ConnectivityManager) applicationContext.getSystemService(CONNECTIVITY_SERVICE);
+        locationManager = (LocationManager) applicationContext.getSystemService(LOCATION_SERVICE);
 
         networkCount = view.findViewById(R.id.network_count_value);
         networkType = view.findViewById(R.id.network_type_value);
@@ -112,7 +114,11 @@ public class NetworkFragment extends AbstractFragment {
         for (int i = 0; i < cellInfos.size(); i++) {
             CellInfo cellInfo = cellInfos.get(i);
             CellData cellData = CellDataFactory.parseData(cellInfo);
-            cellList.append(String.format(Locale.US, "%d. %s\n", i + 1, cellData.toString()));
+            String cellDataString = "NONE";
+            if (cellData != null) {
+                cellDataString = cellData.toString();
+            }
+            cellList.append(String.format(Locale.US, "%d. %s\n", i + 1, cellDataString));
         }
 
         cellList.setKeyListener(null);
